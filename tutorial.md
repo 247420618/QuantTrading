@@ -347,7 +347,7 @@ print(pd.concat({"dual_ma": strategy_stats, "buy_hold": benchmark_stats}, axis=1
 假设研究“低波动”因子：
 
 $$
-\sigma_{i,t}=\operatorname{Std}(r_{i,t-59:t}).
+\sigma_{i,t}=\mathrm{Std}(r_{i,t-59:t}).
 $$
 
 每月末：
