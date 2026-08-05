@@ -39,10 +39,10 @@
 
 简单收益率和对数收益率分别为
 
-\[
+$$
 r_t=\frac{P_t}{P_{t-1}}-1,\qquad
 \ell_t=\log P_t-\log P_{t-1}.
-\]
+$$
 
 对数收益率便于时间相加；组合收益和真实资金曲线通常使用简单收益率。不要直接在不同股票的绝对价格上比较“高低”。
 
@@ -346,9 +346,9 @@ print(pd.concat({"dual_ma": strategy_stats, "buy_hold": benchmark_stats}, axis=1
 
 假设研究“低波动”因子：
 
-\[
+$$
 \sigma_{i,t}=\operatorname{Std}(r_{i,t-59:t}).
-\]
+$$
 
 每月末：
 
@@ -373,10 +373,10 @@ print(pd.concat({"dual_ma": strategy_stats, "buy_hold": benchmark_stats}, axis=1
 
 先使用可解释的线性组合：
 
-\[
+$$
 s_{i,t}=w_v z^{value}_{i,t}+w_q z^{quality}_{i,t}
 +w_m z^{momentum}_{i,t}+w_l z^{lowvol}_{i,t}.
-\]
+$$
 
 第一版令权重相等，不要立即优化。每月买入前 20--50 只，等权或按风险倒数加权，并设置：
 
@@ -477,15 +477,15 @@ s_{i,t}=w_v z^{value}_{i,t}+w_q z^{quality}_{i,t}
 
 若价差或残差近似 AR(1)：
 
-\[
+$$
 x_t=\alpha+\phi x_{t-1}+\epsilon_t,
-\]
+$$
 
-在 `0 < phi < 1` 时，冲击衰减一半所需期数为
+在 $0 < \phi < 1$ 时，冲击衰减一半所需期数为
 
-\[
+$$
 h_{1/2}=-\frac{\ln 2}{\ln \phi}.
-\]
+$$
 
 ```python
 import numpy as np
@@ -507,7 +507,7 @@ def ar1_half_life(spread):
 
 ### 9.2 选股信号的“寿命”
 
-对横截面因子，更实用的是 IC decay：在 `t` 的因子分数与未来 `h=1,5,10,20,60` 日收益分别计算 Rank IC。IC 何时衰减到初始值一半，可以称为经验信号半衰期，但它只是描述统计，不应强行套指数衰减。
+对横截面因子，更实用的是 IC decay：在 $t$ 的因子分数与未来 $h \in \{1,5,10,20,60\}$ 日收益分别计算 Rank IC。IC 何时衰减到初始值一半，可以称为经验信号半衰期，但它只是描述统计，不应强行套指数衰减。
 
 信号持有期应综合三件事：预测衰减、调仓成本、风险暴露漂移。最强预测点不一定是净收益最优点。
 
@@ -530,9 +530,9 @@ def ar1_half_life(spread):
 
 对 A 股低频选股，通常比“预测单只股票明天涨跌”更清晰的任务是：在每个调仓日预测未来 20 个交易日相对行业或基准的收益排序。
 
-\[
+$$
 y_{i,t}=R_{i,t\rightarrow t+20}-R_{benchmark,t\rightarrow t+20}.
-\]
+$$
 
 输入可包括：
 
