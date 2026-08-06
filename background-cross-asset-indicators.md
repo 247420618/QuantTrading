@@ -24,14 +24,14 @@
 
 股票价格可粗略分解为：
 
-$$
+```math
 \Delta \log P_t
 \approx
 \Delta \log \mathrm{E}_t(\mathrm{CF})
 -D_t^{\mathrm{equity}}\Delta y_t
 -\Delta \mathrm{ERP}_t
 +\varepsilon_t.
-$$
+```
 
 其中：
 
@@ -68,13 +68,13 @@ $$
 
 样本相关系数为：
 
-$$
+```math
 \widehat{\rho}_{xy}
 =
 \frac{\sum_{t=1}^{T}(x_t-\bar{x})(y_t-\bar{y})}
 {\sqrt{\sum_{t=1}^{T}(x_t-\bar{x})^2}
 \sqrt{\sum_{t=1}^{T}(y_t-\bar{y})^2}}.
-$$
+```
 
 它只回答“这个样本里是否一起变化”，不回答：
 
@@ -88,11 +88,11 @@ $$
 
 若指标 $x_t$ 与未来股票收益 $r_{t+h}$ 有关系，研究对象应写成：
 
-$$
+```math
 \rho_h
 =
 \mathrm{Corr}(x_t,r_{t+h}).
-$$
+```
 
 关键是预测时点。在日期 $t$ 形成信号时，$x_t$ 必须真的已经发布。月度数据在月末“所属”，不代表月末就可知；港口、存款、房价和行业统计常在下一月发布。若把数据所属月份误作可知时间，会制造未来函数。
 
@@ -100,10 +100,10 @@ $$
 
 许多表面相关来自第三个变量：
 
-$$
+```math
 z_t \longrightarrow x_t,\qquad
 z_t \longrightarrow y_t.
-$$
+```
 
 例如宽信用可能同时推高房地产交易和股票估值。此时房价与股价相关，不表示房价直接预测股价。反过来，风险偏好下降可能同时增加定期存款、压低股票，并降低住房成交。只做两变量回归会把共同状态误认成直接作用。
 
@@ -135,35 +135,35 @@ $$
 
 在理想化的可储存商品中，期货与现货的持有成本关系可写为：
 
-$$
+```math
 F_t^{(T)}
 =
 S_t
 \exp\left[
 (r_t+c_t-y_t)(T-t)
 \right],
-$$
+```
 
 其中 $r_t$ 是融资成本，$c_t$ 是仓储和保险成本，$y_t$ 是便利收益。现实商品还受质量、地点、运输和交割选择权影响，所以不能只用一个无风险利率计算所有期货“合理价”。
 
 同一标的、同一执行价和到期日的欧式期权，在忽略股息和摩擦时满足看涨看跌平价：
 
-$$
+```math
 C_t-P_t
 =
 S_t-K\exp[-r(T-t)].
-$$
+```
 
 有分红、合约行权方式不同或标的难以融券时要调整。显著偏离首先应检查报价是否同步、合约乘数、股息、交易成本和可执行性，而不是立即认定存在无风险机会。
 
 在货币可自由兑换、融资和远期市场可交易的理想条件下，抛补利率平价约束即期汇率、远期汇率和两地利率：
 
-$$
+```math
 \frac{F_t^{\mathrm{FX}}}{S_t^{\mathrm{FX}}}
 \approx
 \frac{1+r_t^{\mathrm{domestic}}\tau}
 {1+r_t^{\mathrm{foreign}}\tau}.
-$$
+```
 
 在岸与离岸、资本流动限制、信用和流动性差异会产生基差。这里的价值是建立基准：先从无套利理论得到“应有关系”，再把偏离解释为真实摩擦，而不是把任意历史相关都称为规律。
 
@@ -175,21 +175,21 @@ $$
 
 初步应比较以下变换：
 
-$$
+```math
 \Delta x_t=x_t-x_{t-1},
-$$
+```
 
-$$
+```math
 g_t^{(12)}
 =
 \frac{x_t}{x_{t-12}}-1,
-$$
+```
 
-$$
+```math
 \Delta\log x_t
 =
 \log x_t-\log x_{t-1}.
-$$
+```
 
 对股价通常使用收益率；对宏观存量通常使用增量、同比增速、占比或相对趋势偏离。季节性强的数据还要同比、季调或加入月份固定效应。
 
@@ -197,20 +197,20 @@ $$
 
 如果两个非平稳变量存在稳定的长期均衡组合，直接差分会丢掉长期信息。协整思想是检验某个组合是否平稳：
 
-$$
+```math
 u_t=y_t-\alpha-\beta x_t.
-$$
+```
 
 如果 $x_t$ 和 $y_t$ 各自非平稳，但 $u_t$ 平稳，才有理由研究误差修正：
 
-$$
+```math
 \Delta y_t
 =
 \lambda u_{t-1}
 +\sum_{j=1}^{p}\phi_j\Delta y_{t-j}
 +\sum_{j=0}^{q}\theta_j\Delta x_{t-j}
 +\varepsilon_t.
-$$
+```
 
 但“统计上协整”仍不自动等于经济因果或可交易套利。指数成分变化、制度变化和结构突变都可能使长期关系失效。
 
@@ -218,7 +218,7 @@ $$
 
 用滚动窗口估计：
 
-$$
+```math
 \widehat{\rho}_{t,w}
 =
 \mathrm{Corr}
@@ -226,7 +226,7 @@ $$
 x_{t-w+1:t},
 y_{t-w+1:t}
 \right).
-$$
+```
 
 至少同时画：
 
@@ -244,12 +244,12 @@ $$
 
 人民银行金融机构人民币信贷收支表将住户存款拆为：
 
-$$
+```math
 \mathrm{Household\ Deposits}
 =
 \mathrm{Demand\ Deposits}
 +\mathrm{Time\ and\ Other\ Deposits}.
-$$
+```
 
 存款余额上升可能来自：
 
@@ -293,7 +293,7 @@ $$
 
 一个可检验模型是：
 
-$$
+```math
 r_{t\rightarrow t+h}^{\mathrm{index}}
 =
 \alpha
@@ -303,7 +303,7 @@ r_{t\rightarrow t+h}^{\mathrm{index}}
 +\beta_4\mathrm{Valuation}_t
 +\beta_5\mathrm{Trend}_t
 +\varepsilon_{t+h}.
-$$
+```
 
 必须做滚动样本外检验。大概率结果是系数不稳定、单变量解释力很低；这本身就是有价值的结论。
 
@@ -327,14 +327,14 @@ $$
 
 房价和股票可能共同受以下变量推动：
 
-$$
+```math
 \text{宽松融资}
 \rightarrow
 \begin{cases}
 \text{住房需求、抵押品价值和地产信用上升},\\
 \text{股票贴现率或风险溢价下降}.
 \end{cases}
-$$
+```
 
 房价上涨还可能通过：
 
@@ -379,22 +379,22 @@ $$
 
 可将城市房价和公司地域暴露结合：
 
-$$
+```math
 \mathrm{HousingExposure}_{i,t}
 =
 \sum_c w_{i,c,t}\Delta \log H_{c,t},
-$$
+```
 
 其中 $w_{i,c,t}$ 是公司在城市 $c$ 的销售、土地储备、门店、贷款或收入暴露。然后在公司和月份固定效应下检验：
 
-$$
+```math
 r_{i,t+1}
 =
 \alpha_i+\delta_t
 +\beta\mathrm{HousingExposure}_{i,t}
 +\gamma^\top X_{i,t}
 +\varepsilon_{i,t+1}.
-$$
+```
 
 这比拿全国房价指数与上证指数做一条相关线更接近经济机制。
 
@@ -416,25 +416,25 @@ $$
 
 比船数更合理的是：
 
-$$
+```math
 \mathrm{CargoFlow}_t
 \approx
 \sum_{v\in\mathcal{V}_t}
 \mathrm{DWT}_v
 \times\mathrm{LoadFactor}_{v,t}
 \times\mathrm{CargoProbability}_{v,t}.
-$$
+```
 
 若研究全球运输需求，还可以用吨海里：
 
-$$
+```math
 \mathrm{TonMiles}_t
 =
 \sum_v
 \mathrm{CargoTons}_{v,t}
 \times
 \mathrm{Distance}_{v,t}.
-$$
+```
 
 相同吨数从更远来源运输，会占用更多船舶运力并推高运价。
 
@@ -442,11 +442,11 @@ $$
 
 矿价是预期变量。市场预期未来基建刺激或矿山减产时，期货和现货价格可能先涨；采购、装船、航行、到港和统计发布要晚数周。因此观察到：
 
-$$
+```math
 \mathrm{Price}_{t}
 \longrightarrow
 \mathrm{Shipment}_{t+1:t+k}
-$$
+```
 
 不表示价格“导致”真实需求，可能只是价格比物理流量更早反映同一个信息。
 
@@ -480,14 +480,14 @@ $$
 
 航运公司利润还取决于：
 
-$$
+```math
 \mathrm{Profit}
 \approx
 (\mathrm{FreightRate}-\mathrm{VoyageCost})
 \times\mathrm{EffectiveCapacity}
 -\mathrm{FixedCost}
 -\mathrm{FinanceCost}.
-$$
+```
 
 若公司大量运力签了低价长协，即期运价暴涨未必立即进入利润；若公司租入船舶，租金也可能同步上涨。要看自有与租入运力、合同期限、航线暴露、燃油成本、汇率和新船交付。
 
@@ -499,20 +499,20 @@ $$
 
 基差可以定义为：
 
-$$
+```math
 b_t^{(T)}
 =S_t-F_t^{(T)},
-$$
+```
 
 其中 $S_t$ 是与交割品尽量可比的现货价，$F_t^{(T)}$ 是到期日为 $T$ 的期货价。临近到期通常应收敛，但运输、地区、质量、交割成本、限仓和市场拥挤会造成偏差。
 
 期限结构：
 
-$$
+```math
 \mathrm{Slope}_t
 =
 F_t^{(T_2)}-F_t^{(T_1)},\qquad T_2>T_1,
-$$
+```
 
 反映不同月份供需预期与风险补偿，不能简单翻译成未来现货涨跌。
 
@@ -520,12 +520,12 @@ $$
 
 更接近公司经营的式子是：
 
-$$
+```math
 \mathrm{UnitMargin}_{i,t}
 =
 \mathrm{HogPrice}_{i,t}
 -\mathrm{FullCost}_{i,t}.
-$$
+```
 
 完全成本包含：
 
@@ -540,14 +540,14 @@ $$
 
 公司利润可粗略写成：
 
-$$
+```math
 \mathrm{Profit}_{i,t}
 \approx
 \mathrm{UnitMargin}_{i,t}
 \times\mathrm{SalesVolume}_{i,t}
 +\mathrm{OtherBusiness}_{i,t}
 +\mathrm{HedgePnL}_{i,t}.
-$$
+```
 
 猪价相同，成本、出栏和负债不同的公司，利润弹性完全不同。
 
@@ -555,7 +555,7 @@ $$
 
 农业农村部将能繁母猪存栏作为生猪产能调控的核心指标，并概括为“长期调母猪，短期调肥猪”。传导大致是：
 
-$$
+```math
 \text{能繁母猪}
 \rightarrow
 \text{仔猪}
@@ -563,7 +563,7 @@ $$
 \text{育肥猪}
 \rightarrow
 \text{未来出栏供给}.
-$$
+```
 
 中间存在生物学时滞、生产效率、疫情、二次育肥和压栏等扰动。能繁母猪增加通常意味着较远期供给压力，但不能机械设定固定几个月，因为生产效率和行为会变。
 
@@ -601,28 +601,28 @@ $$
 
 固息债券价格为未来现金流折现：
 
-$$
+```math
 B(y)
 =
 \sum_{t=1}^{n}
 \frac{C_t}{(1+y)^t}
 +\frac{M}{(1+y)^n}.
-$$
+```
 
 在现金流固定时：
 
-$$
+```math
 \frac{\partial B}{\partial y}<0.
-$$
+```
 
 小幅收益率变化下：
 
-$$
+```math
 \frac{\Delta B}{B}
 \approx
 -D_{\mathrm{mod}}\Delta y
 +\frac{1}{2}\mathrm{Convexity}(\Delta y)^2.
-$$
+```
 
 这是最明确的跨资产关系之一。注意它描述债券自身，不等于“国债收益率上升时所有股票一定下跌”。
 
@@ -637,13 +637,13 @@ $$
 
 因此要分解名义利率：
 
-$$
+```math
 y_t^{\mathrm{nominal}}
 \approx
 y_t^{\mathrm{real}}
 +\pi_t^{e}
 +\mathrm{TermPremium}_t.
-$$
+```
 
 同样 10 年期收益率上升，若来自真实增长预期改善，周期股现金流可能上修；若来自实际利率或期限溢价急升，高估值长久期股票可能承压。
 
@@ -651,11 +651,11 @@ $$
 
 常见斜率：
 
-$$
+```math
 \mathrm{TermSpread}_t
 =
 y_t^{10\mathrm{Y}}-y_t^{1\mathrm{Y}}.
-$$
+```
 
 它可能反映未来增长、通胀、政策利率和期限溢价。对银行，“曲线变陡利好净息差”只是粗略起点，因为还要看：
 
@@ -671,12 +671,12 @@ $$
 
 信用利差可写为：
 
-$$
+```math
 \mathrm{CreditSpread}_{i,t}
 =
 y_{i,t}^{\mathrm{credit}}
 -y_t^{\mathrm{government,matched}}.
-$$
+```
 
 利差扩大通常包含违约概率、流动性、风险厌恶和供需恶化。它与股票风险常有共同方向：
 
@@ -706,9 +706,9 @@ $$
 
 必须注明货币对和报价。例如人民币兑美元可写成：
 
-$$
+```math
 q_t=\mathrm{CNY\ per\ USD}.
-$$
+```
 
 $q_t$ 上升表示一美元对应更多人民币，即人民币对美元贬值。不同数据源可能使用相反方向，符号不核对会让回归结论完全倒置。
 
@@ -716,14 +716,14 @@ $q_t$ 上升表示一美元对应更多人民币，即人民币对美元贬值�
 
 粗略利润敏感度为：
 
-$$
+```math
 \frac{\partial \mathrm{Profit}_i}{\partial q}
 \approx
 \mathrm{ForeignRevenue}_i
 -\mathrm{ForeignInputCost}_i
 -\mathrm{ForeignDebtService}_i
 -\mathrm{HedgeOffset}_i.
-$$
+```
 
 人民币贬值可能：
 
@@ -756,13 +756,13 @@ $$
 
 在产量暂时固定时：
 
-$$
+```math
 \Delta \mathrm{EBITDA}
 \approx
 Q\Delta P
 +(P-C)\Delta Q
 -Q\Delta C.
-$$
+```
 
 高经营杠杆使商品小幅涨价可能带来更大利润变化。但需要扣除：
 
@@ -778,13 +778,13 @@ $$
 
 中游更关心加工价差：
 
-$$
+```math
 \mathrm{ProcessingMargin}
 =
 \mathrm{OutputPrice}
 -\sum_k a_k\mathrm{InputPrice}_k
 -\mathrm{VariableCost}.
-$$
+```
 
 典型例子：
 
@@ -833,7 +833,7 @@ $$
 
 对一种商品：
 
-$$
+```math
 \mathrm{Inventory}_t
 =
 \mathrm{Inventory}_{t-1}
@@ -842,7 +842,7 @@ $$
 -\mathrm{Consumption}_t
 -\mathrm{Exports}_t
 +\mathrm{Adjustment}_t.
-$$
+```
 
 库存下降不一定利多：
 
@@ -904,17 +904,17 @@ A/H 两地上市公司共享公司现金流，但证券价格还受：
 
 隔夜美股下跌与次日 A 股低开可能有统计关系，但收盘收益还受中国本地信息影响。研究应分开：
 
-$$
+```math
 r_t^{\mathrm{A,open}}
 =
 \log O_t-\log C_{t-1},
-$$
+```
 
-$$
+```math
 r_t^{\mathrm{A,intraday}}
 =
 \log C_t-\log O_t.
-$$
+```
 
 海外信息更可能进入隔夜跳空，而不一定预测 A 股开盘后的日内方向。
 
@@ -947,13 +947,13 @@ ETF 份额增加表示一级市场出现净申购，但动机可能是：
 
 标准化流量可写为：
 
-$$
+```math
 \mathrm{ETFFlow}_{t}
 =
 \frac{\Delta\mathrm{Shares}_{t}
 \times\mathrm{NAV}_{t-1}}
 {\mathrm{AUM}_{t-1}}.
-$$
+```
 
 应分别研究流量之前、当日和之后的收益。大涨吸引申购与申购推动价格是两种相反时间顺序。
 
@@ -965,7 +965,7 @@ $$
 
 隐含波动率是把期权市场价格代回定价模型得到的参数。它融合了风险中性分布、尾部保险需求、供需和波动风险溢价，不是未来实现波动率的无偏点预测。可以比较：
 
-$$
+```math
 \mathrm{VRP}_t
 =
 \mathrm{IV}_t^2
@@ -973,7 +973,7 @@ $$
 \left(
 \mathrm{RV}_{t\rightarrow T}^2
 \right),
-$$
+```
 
 其中 $\mathrm{IV}$ 是隐含波动率，$\mathrm{RV}$ 是未来实现波动率，二者差异可理解为模型和风险溢价的混合。
 
@@ -985,7 +985,7 @@ $$
 
 从弱到强可以这样理解：
 
-$$
+```math
 \text{宏观总量}
 \rightarrow
 \text{行业活动}
@@ -993,7 +993,7 @@ $$
 \text{公司经营}
 \rightarrow
 \text{财务结果}.
-$$
+```
 
 越靠近公司，经济解释越直接，但数据覆盖可能越窄、噪声和选择偏差也可能更大。
 
@@ -1019,11 +1019,11 @@ $$
 
 行业总量对每家公司含义不同。可以写成：
 
-$$
+```math
 X_{i,t}^{\mathrm{exposure}}
 =
 \sum_k w_{i,k,t}X_{k,t},
-$$
+```
 
 其中 $w_{i,k,t}$ 可来自地区、产品、客户、币种、航线、发电类型或原料结构。权重也必须是当时可知的，不能用今天业务结构回填过去。
 
@@ -1073,7 +1073,7 @@ $$
 
 在跑回归前写清：
 
-$$
+```math
 \text{外部指标}
 \rightarrow
 \text{公司收入、成本、资产负债或贴现率}
@@ -1081,7 +1081,7 @@ $$
 \text{盈利预期}
 \rightarrow
 \text{股票价格}.
-$$
+```
 
 同时列出共同因子、反向因果和市场提前计价路径。没有可辩护机制的相关，优先视为探索结果。
 
@@ -1095,17 +1095,17 @@ $$
 
 外部指标能很好预测盈利，不代表能预测收益，因为价格可能更早反映。建议逐级检验：
 
-$$
+```math
 X_t\rightarrow \Delta\mathrm{Fundamental}_{t+h},
-$$
+```
 
-$$
+```math
 X_t\rightarrow \Delta\mathrm{Expectation}_{t+h},
-$$
+```
 
-$$
+```math
 X_t\rightarrow r_{t+h}^{\mathrm{abnormal}}.
-$$
+```
 
 ### 14.3 第三步：对齐可知时间
 
@@ -1127,12 +1127,12 @@ $$
 
 市场反应更接近：
 
-$$
+```math
 \mathrm{Surprise}_t
 =
 \frac{\mathrm{Actual}_t-\mathrm{Expected}_{t^-}}
 {\widehat{\sigma}_{\mathrm{surprise}}}.
-$$
+```
 
 若没有一致预期，可用：
 
@@ -1148,7 +1148,7 @@ $$
 
 行业或股票回归可写为：
 
-$$
+```math
 r_{i,t+h}
 =
 \alpha
@@ -1156,7 +1156,7 @@ r_{i,t+h}
 +\gamma^\top F_t
 +\delta^\top Z_{i,t}
 +\varepsilon_{i,t+h},
-$$
+```
 
 其中 $F_t$ 可含市场、利率、信用、汇率、商品和风险偏好，$Z_{i,t}$ 可含规模、价值、动量、行业与流动性。$\beta$ 在控制后消失，说明原相关可能只是公共暴露。
 
@@ -1164,7 +1164,7 @@ $$
 
 分布滞后模型：
 
-$$
+```math
 r_{t+h}
 =
 \alpha
@@ -1172,7 +1172,7 @@ r_{t+h}
 +\sum_{k=1}^{q}\phi_k r_{t-k}
 +\gamma^\top F_t
 +\varepsilon_{t+h}.
-$$
+```
 
 不要遍历大量滞后后只报告最显著的一个。应预先规定窗口，或对全部尝试做多重检验校正。
 
@@ -1192,7 +1192,7 @@ $$
 
 允许系数随状态变化：
 
-$$
+```math
 r_{t+h}
 =
 \alpha
@@ -1200,7 +1200,7 @@ r_{t+h}
 +\beta_1X_t I(S_t=\mathrm{tight})
 +\gamma^\top F_t
 +\varepsilon_{t+h}.
-$$
+```
 
 状态可来自信用宽紧、库存高低、产能利用率、牛熊、波动率和政策阶段。状态必须只用当时信息定义，不能事后看完整周期标注。
 
@@ -1219,9 +1219,9 @@ $$
 
 若测试 $m$ 个彼此无效的指标，每个按 5% 显著性判断，预期也会出现约：
 
-$$
+```math
 0.05m
-$$
+```
 
 个“显著”结果。测试上百种港口、商品、滞后和行业组合时，偶然发现几条漂亮曲线是必然事件。
 
@@ -1246,13 +1246,13 @@ $$
 
 样本外预测 $R^2$ 可写为：
 
-$$
+```math
 R_{\mathrm{OOS}}^2
 =
 1-
 \frac{\sum_t(y_t-\widehat{y}_t)^2}
 {\sum_t(y_t-\widehat{y}_t^{\mathrm{benchmark}})^2}.
-$$
+```
 
 $R_{\mathrm{OOS}}^2<0$ 表示还不如基线。金融预测中样本内显著、样本外失败很常见，应把失败当作正常研究结果。
 

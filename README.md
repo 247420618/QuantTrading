@@ -9,3 +9,9 @@
 - [A 股行情、成交、盘口与筹码指标基础](background-market-indicators.md)
 - [A 股量化研究所需的宏观、政策、消息与趋势背景](background-macro-policy-news-regime.md)
 - [A 股量化研究中的跨资产、实体经济与另类指标](background-cross-asset-indicators.md)
+
+## Markdown 公式约定
+
+- 块公式统一使用带 `math` 语言标记的三反引号围栏，不使用双美元符号块。
+- 行内公式使用单美元符号作为定界符，并与相邻的中文、英文或数字正文保留空格。
+- 不使用 GitHub 数学渲染器禁止的宏。

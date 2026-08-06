@@ -41,10 +41,10 @@
 
 简单收益率和对数收益率分别为
 
-$$
+```math
 r_t=\frac{P_t}{P_{t-1}}-1,\qquad
 \ell_t=\log P_t-\log P_{t-1}.
-$$
+```
 
 对数收益率便于时间相加；组合收益和真实资金曲线通常使用简单收益率。不要直接在不同股票的绝对价格上比较“高低”。
 
@@ -358,9 +358,9 @@ print(pd.concat({"dual_ma": strategy_stats, "buy_hold": benchmark_stats}, axis=1
 
 假设研究“低波动”因子：
 
-$$
+```math
 \sigma_{i,t}=\mathrm{Std}(r_{i,t-59:t}).
-$$
+```
 
 每月末：
 
@@ -385,10 +385,10 @@ $$
 
 先使用可解释的线性组合：
 
-$$
+```math
 s_{i,t}=w_v z^{value}_{i,t}+w_q z^{quality}_{i,t}
 +w_m z^{momentum}_{i,t}+w_l z^{lowvol}_{i,t}.
-$$
+```
 
 第一版令权重相等，不要立即优化。每月买入前 20--50 只，等权或按风险倒数加权，并设置：
 
@@ -489,15 +489,15 @@ $$
 
 若价差或残差近似 AR(1)：
 
-$$
+```math
 x_t=\alpha+\phi x_{t-1}+\epsilon_t,
-$$
+```
 
 在 $0 < \phi < 1$ 时，冲击衰减一半所需期数为
 
-$$
+```math
 h_{1/2}=-\frac{\ln 2}{\ln \phi}.
-$$
+```
 
 ```python
 import numpy as np
@@ -542,9 +542,9 @@ def ar1_half_life(spread):
 
 对 A 股低频选股，通常比“预测单只股票明天涨跌”更清晰的任务是：在每个调仓日预测未来 20 个交易日相对行业或基准的收益排序。
 
-$$
+```math
 y_{i,t}=R_{i,t\rightarrow t+20}-R_{benchmark,t\rightarrow t+20}.
-$$
+```
 
 输入可包括：
 

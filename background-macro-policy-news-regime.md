@@ -12,7 +12,7 @@
 
 不能只看“政策支持了哪个行业”，必须沿着传导链分析：
 
-$$
+```math
 \text{政策文件}
 \rightarrow
 \text{实施工具与预算}
@@ -24,7 +24,7 @@ $$
 \text{现金流与风险}
 \rightarrow
 \text{股价}.
-$$
+```
 
 同一政策对同一行业内部的公司也可能方向相反。例如集中采购通常压低产品价格，但可能扩大中选企业销量、提高集中度、压缩未中选企业份额；新能源补贴可以增加需求，也可能吸引过多产能并引发价格战。
 
@@ -51,10 +51,10 @@ Price-in 不是一个可以直接观测的真假变量。更准确的问题是�
 
 市场交易的是**相对预期的变化**，而不是消息标题的正负。可把最简单的消息意外写为：
 
-$$
+```math
 \mathrm{Surprise}_t
 =\mathrm{Actual}_t-\mathrm{Expected}_{t^-}.
-$$
+```
 
 $\mathrm{Expected}_{t^-}$ 表示消息公开前一刻的市场预期。若大家已预期利润增长 50%，实际只增长 30%，新闻标题仍是“高增长”，但相对预期是负面。反过来，公司仍然亏损，但亏损小于预期，也可能是正面意外。
 
@@ -64,9 +64,9 @@ $\mathrm{Expected}_{t^-}$ 表示消息公开前一刻的市场预期。若大家
 
 当下无法确定，只能估计条件概率：
 
-$$
+```math
 \Pr(r_{t\rightarrow t+h}>0\mid X_t).
-$$
+```
 
 $X_t$ 可以包含历史价格、成交、宏观状态、盈利修正、政策事件和市场宽度。任何趋势指标都是对历史数据的压缩，不是未来状态标签。
 
@@ -100,12 +100,12 @@ $X_t$ 可以包含历史价格、成交、宏观状态、盈利修正、政策�
 
 股票价值可以抽象为未来股东现金流的折现：
 
-$$
+```math
 P_t
 =\sum_{s=1}^{\infty}
 \frac{\mathrm{E}_t(\mathrm{CF}_{t+s})}
 {(1+k_{t,s})^s}.
-$$
+```
 
 其中：
 
@@ -139,14 +139,14 @@ $$
 
 最终价格反应是多条通道之和：
 
-$$
+```math
 \Delta\log P
 \approx
 \text{现金流预期修正}
 -\text{久期}\times\text{贴现率变化}
 -\text{风险溢价变化}
 +\text{短期资金与交易冲击}.
-$$
+```
 
 因此，“降息利好股票”“油价上涨利好能源”都只是条件句。降息也可能传达经济弱于预期；油价上涨利好上游生产商，却可能损害航空、化工下游和消费者购买力。
 
@@ -154,7 +154,7 @@ $$
 
 可以使用下面的研究框架，但不要把它伪装成精确物理定律：
 
-$$
+```math
 \mathrm{Impact}_{i,e}
 \sim
 \mathrm{Surprise}_e
@@ -164,7 +164,7 @@ $$
 \times\mathrm{Exposure}_{i,e}
 \times\mathrm{Elasticity}_{i,e}
 -\mathrm{PricedIn}_{i,e}.
-$$
+```
 
 - Surprise：相对市场预期的新信息有多大；
 - Authority：发布主体和文件效力；
@@ -199,7 +199,7 @@ $$
 
 一项政策可能经历：
 
-$$
+```math
 \text{议题形成}
 \rightarrow
 \text{预期与吹风}
@@ -219,7 +219,7 @@ $$
 \text{收入与回款}
 \rightarrow
 \text{评估与退出}.
-$$
+```
 
 每个节点都可能产生价格反应。若市场在吹风阶段已经形成一致预期，正式发布时反应可能很小；若正式文件的力度低于预期，甚至会出现“利好落地即下跌”。
 
@@ -366,12 +366,12 @@ M1、M2 是货币存量的不同口径。初学者常把 M2 增长直接解释�
 
 研究中常把新增信用相对经济规模的变化称为信用脉冲。一个简化表达是：
 
-$$
+```math
 \mathrm{CreditImpulse}_t
 =\Delta\left(
 \frac{\mathrm{NewCredit}_t}{\mathrm{NominalGDP}_t}
 \right).
-$$
+```
 
 不同机构会使用不同信用口径、年化方式和季节调整，不能把供应商字段当作官方统一指标。信用脉冲是二阶变化，噪声和修订都较大。
 
@@ -461,11 +461,11 @@ $$
 
 标准化意外可写为：
 
-$$
+```math
 z_t^{\mathrm{surprise}}
 =\frac{\mathrm{Actual}_t-\mathrm{Consensus}_t}
 {\mathrm{std}(\mathrm{ForecastError})}.
-$$
+```
 
 没有高质量历史预期数据时，可以使用简单时间序列预测作基线，但必须把它称为“模型意外”，不能声称是市场预期意外。
 
@@ -495,11 +495,11 @@ $$
 
 可以构造二元状态：
 
-$$
+```math
 \mathrm{State}_t
 =
 (\text{水平高低},\ \text{边际上升下降}).
-$$
+```
 
 但阈值和滤波必须只使用当时数据，不能用事后全样本均值判断历史状态。
 
@@ -509,14 +509,14 @@ $$
 
 所以就业、通胀或社融数据不能固定映射为涨跌。应把市场状态加入事件模型，例如：
 
-$$
+```math
 r_{t+1}
 =\alpha
 +\beta_1\mathrm{Surprise}_t
 +\beta_2\mathrm{Regime}_t
 +\beta_3\mathrm{Surprise}_t\mathrm{Regime}_t
 +\varepsilon_{t+1}.
-$$
+```
 
 交互项用于检验同一意外在不同状态下是否具有不同影响。
 
@@ -731,7 +731,7 @@ $$
 
 一个简化利润变化为：
 
-$$
+```math
 \Delta\Pi
 \approx
 Q\Delta P
@@ -741,7 +741,7 @@ Q\Delta P
 -\Delta\mathrm{OPEX}
 -\Delta\mathrm{Interest}
 -\Delta\mathrm{Tax}.
-$$
+```
 
 $P,Q,C$ 分别表示单价、数量和单位成本。政策可能同时改变多项：
 
@@ -895,26 +895,26 @@ $P,Q,C$ 分别表示单价、数量和单位成本。政策可能同时改变多
 
 先估计正常收益：
 
-$$
+```math
 \widehat r_{i,t}^{\mathrm{normal}}
 =\widehat\alpha_i
 +\widehat\beta_i r_{m,t}
 +\widehat\gamma_i r_{\mathrm{industry},t}.
-$$
+```
 
 异常收益为：
 
-$$
+```math
 \mathrm{AR}_{i,t}
 =r_{i,t}-\widehat r_{i,t}^{\mathrm{normal}}.
-$$
+```
 
 事件窗口累计异常收益：
 
-$$
+```math
 \mathrm{CAR}_{i}[\tau_1,\tau_2]
 =\sum_{\tau=\tau_1}^{\tau_2}\mathrm{AR}_{i,\tau}.
-$$
+```
 
 常见窗口：
 
@@ -1125,11 +1125,11 @@ $$
 
 可用标准化趋势：
 
-$$
+```math
 \mathrm{TrendScore}_{t,L}
 =\frac{r_{t-L\rightarrow t}}
 {\sigma_{t,L}}.
-$$
+```
 
 它类似风险调整后的历史方向，但不是预测概率。低波动时期分母很小，需设下限和极值处理。
 
@@ -1145,13 +1145,13 @@ $$
 
 设不可观测状态 $S_t$ 在有限状态间转移，收益或宏观观测 $X_t$ 的分布依赖状态：
 
-$$
+```math
 \Pr(S_t=j\mid S_{t-1}=i)=p_{ij},
-$$
+```
 
-$$
+```math
 X_t\mid S_t=j\sim F_j.
-$$
+```
 
 模型输出状态概率而不是确定标签。风险包括：
 
@@ -1172,13 +1172,13 @@ $$
 
 可以令趋势或宏观潜在状态缓慢演化：
 
-$$
+```math
 z_t=z_{t-1}+\eta_t,
-$$
+```
 
-$$
+```math
 y_t=H_tz_t+\varepsilon_t.
-$$
+```
 
 卡尔曼滤波适合近似线性高斯系统，粒子滤波可处理更复杂状态。模型复杂度上升不保证预测收益上升。
 
@@ -1430,13 +1430,13 @@ BaoStock 适合历史行情和部分财务字段，不提供完整的：
 
 对政策意外或宏观意外回归：
 
-$$
+```math
 r_{i,t}
 =\alpha_i
 +\beta_i^{\mathrm{policy}}S_t
 +\gamma_i^\top F_t
 +\varepsilon_{i,t}.
-$$
+```
 
 $S_t$ 是政策或宏观意外，$F_t$ 是市场、行业和风格控制。比较滚动 $\beta$，检查敏感度是否随负债、收入结构和宏观状态变化。
 
