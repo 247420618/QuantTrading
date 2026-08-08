@@ -12,25 +12,25 @@ Lesson 0 面向数学、机器学习基础较强，但金融知识尚未系统�
 
 ### 0.1 财务、行业与估值基础
 
-[开始学习](background-financial-fundamentals.md)
+[开始学习](01-financial-fundamentals.md)
 
 先理解公司怎样赚钱、报表怎样记录、估值为什么必须区分行业与周期。完成后应能识别低 PE 陷阱，并把财务字段按实际公告时间转成量化因子。
 
 ### 0.2 行情、成交、盘口与技术指标
 
-[开始学习](background-market-indicators.md)
+[开始学习](02-market-indicators.md)
 
 从真实成交和 A 股交易制度出发，理解价格、成交量、换手率、盘口、流动性、筹码与技术指标。完成后应能独立验证双均线等基础信号，并正确处理 T+1 和交易成本。
 
 ### 0.3 宏观、政策、消息与趋势
 
-[开始学习](background-macro-policy-news-regime.md)
+[开始学习](03-macro-policy-news-regime.md)
 
 把“政策利好”“消息利空”“趋势延续”等口语判断拆成信息时点、预期差、执行工具、公司暴露和状态条件。完成后应能设计不使用未来信息的事件研究。
 
 ### 0.4 跨资产、实体经济与另类指标
 
-[开始学习](background-cross-asset-indicators.md)
+[开始学习](04-cross-asset-indicators.md)
 
 研究股票与存款、房价、利率、汇率、商品、航运、库存和行业经营数据的关系。完成后应能区分机械关系、经济机制、经验相关与伪相关，并把一个直觉猜想改写成正式研究项目。
 
