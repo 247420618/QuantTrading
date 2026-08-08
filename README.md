@@ -5,10 +5,11 @@
 ## 学习文档
 
 - [沪深股票量化交易入门到进阶教程](tutorial.md)
-- [A 股量化研究所需的财务、行业与估值基础](background-financial-fundamentals.md)
-- [A 股行情、成交、盘口与筹码指标基础](background-market-indicators.md)
-- [A 股量化研究所需的宏观、政策、消息与趋势背景](background-macro-policy-news-regime.md)
-- [A 股量化研究中的跨资产、实体经济与另类指标](background-cross-asset-indicators.md)
+- [Lesson 0：金融与市场背景课](Lesson-0/README.md)
+  - [0.1 财务、行业与估值基础](Lesson-0/background-financial-fundamentals.md)
+  - [0.2 行情、成交、盘口与技术指标](Lesson-0/background-market-indicators.md)
+  - [0.3 宏观、政策、消息与趋势](Lesson-0/background-macro-policy-news-regime.md)
+  - [0.4 跨资产、实体经济与另类指标](Lesson-0/background-cross-asset-indicators.md)
 
 ## Markdown 公式约定
 
