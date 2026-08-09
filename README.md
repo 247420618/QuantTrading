@@ -10,6 +10,8 @@
   - [0.2 行情、成交、盘口与技术指标](Lesson-0/02-market-indicators.md)
   - [0.3 宏观、政策、消息与趋势](Lesson-0/03-macro-policy-news-regime.md)
   - [0.4 跨资产、实体经济与另类指标](Lesson-0/04-cross-asset-indicators.md)
+- [Lesson 1：基础策略实验课](Lessons-1/README.md)
+  - [1.1 双均线趋势策略](Lessons-1/01-dual-moving-average.md)
 
 ## 工具代码
 
@@ -17,6 +19,8 @@
   - 当前数据源：Tushare Pro
   - 主要入口：`Tools.quant_data.DataPortal`
   - 默认缓存：`data/raw/tushare/`
+- [DrawingToolkit：公共绘图接口层](DrawingToolkit/README.md)
+  - 当前支持：双均线买卖点图、策略本金与股票走势对比图
 
 ## Markdown 公式约定
 
