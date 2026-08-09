@@ -2,6 +2,8 @@
 .env
 .env.*
 !.env.example
+*.local.sh
+Tools/env.local.sh
 
 .venv/
 venv/
@@ -12,4 +14,3 @@ data/
 logs/
 reports/
 .harness_local/
-

@@ -11,6 +11,13 @@
   - [0.3 宏观、政策、消息与趋势](Lesson-0/03-macro-policy-news-regime.md)
   - [0.4 跨资产、实体经济与另类指标](Lesson-0/04-cross-asset-indicators.md)
 
+## 工具代码
+
+- [Tools：数据获取接口层](Tools/README.md)
+  - 当前数据源：Tushare Pro
+  - 主要入口：`Tools.quant_data.DataPortal`
+  - 默认缓存：`data/raw/tushare/`
+
 ## Markdown 公式约定
 
 - 块公式统一使用带 `math` 语言标记的三反引号围栏，不使用双美元符号块。
